@@ -45,8 +45,8 @@ message.channel.sendEmbed(embed)
 client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
-لمعرفه اوامر البوت======+help
-لعمل برودكاست ======+bc
+{ +help } لمعرفه اوامر البوت
+{ +bc } لعمل برودكاست ل جميع اعضاء السيرفر
 **`);
     }
 });
