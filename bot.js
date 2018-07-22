@@ -181,7 +181,7 @@ if(message.content === adminprefix + "reaset") {
           message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
         console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
         client.destroy();
-        child_process.fork(__dirname + "/الملف.js");
+        child_process.fork(__dirname + "/discord.js");
         console.log(`تم اعادة تشغيل البوت`);
     }
   
