@@ -171,4 +171,20 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
     }
 });
 
+const child_process = require("child_process");
+const adminprefix = "+";
+const devs = ['402866255838576652'];
+
+client.on('message', message => {
+if(message.content === adminprefix + "reaset") {
+      if (!devs.includes(message.author.id)) return;
+          message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
+        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
+        client.destroy();
+        child_process.fork(__dirname + "/الملف.js");
+        console.log(`تم اعادة تشغيل البوت`);
+    }
+  
+  });
+
 client.login("NDYzNjQzOTcyMTQ1OTA1Njk1.Dh6f2g.BxeAvuQ41QCUFb-N93QpkCuksJk");
