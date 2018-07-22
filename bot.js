@@ -20,10 +20,10 @@ client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : TAHSEEN`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : TAHSEEN ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`+bc | Mine_3RB`,"http://twitch.tv/S-F")
+client.user.setGame(`+help | BY | TAHSEEN`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
