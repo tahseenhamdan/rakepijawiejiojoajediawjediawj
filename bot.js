@@ -91,7 +91,7 @@ var prefix = '+';
       }); 
 
 client.on("message", message => {
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(+)) return;
       let command = message.content.split("+")[0];
       command = command.slice(prefix.length);
         if(command === "mcskin") {
