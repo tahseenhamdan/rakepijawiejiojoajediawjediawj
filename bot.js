@@ -27,6 +27,31 @@ client.user.setGame(`+bc | Mine_3RB`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
+client.on('message', message => {
+  if(message.content.startsWith ('+help')) {
+      if(!message.channel.guild) return;
+    let embed = new Discord.RichEmbed()
+    .setColor('#044812')
+          .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+ 
+    .setDescription(`**[ تــــــــم الارســــال بالخـــــــاص ]** `)
+        message.channel.send()
+ 
+message.channel.sendEmbed(embed)
+}
+});
+ 
+client.on('message', message => {
+     if (message.content === "+help") {
+message.author.send(`  **
+لمعرفه اوامر البوت======+help
+لعمل برودكاست ======+bc
+**`);
+    }
+});
+ 
+
 
 
 client.login("NDYzNjQzOTcyMTQ1OTA1Njk1.Dh6f2g.BxeAvuQ41QCUFb-N93QpkCuksJk");
