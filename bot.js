@@ -45,11 +45,16 @@ message.channel.sendEmbed(embed)
 client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
-{ members } لمعرفه عدد اعضاء السيرفر
+**الاوامر العامه**
 { +help } لمعرفه اوامر البوت
+{ members } لمعرفه عدد اعضاء السيرفر
 { +id } لمعرفه معلومات حسابك
+**الاوامر الاداريه**
 { +bc } لعمل برودكاست ل جميع اعضاء السيرفر
+{ +mc } لاغلاق الشات
+{ +umc } لفتح الشات
 **`);
+                
     }
 });
 
@@ -119,6 +124,30 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 
+});
+
+client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  let command = msg.content.split("+")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split("+").slice(1);
+
+    if(command === "clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
+}
 });
 
 
