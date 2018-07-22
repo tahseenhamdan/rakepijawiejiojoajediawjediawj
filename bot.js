@@ -46,11 +46,27 @@ client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
 { +help } لمعرفه اوامر البوت
+{ +id } لمعرفه معلومات حسابك
 { +bc } لعمل برودكاست ل جميع اعضاء السيرفر
 **`);
     }
 });
 
+
+client.on('message', message => {
+   if (message.content === "+id") {
+   let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setThumbnail(message.author.avatarURL)
+  .addField("Name:",`${message.author.username}`, true)
+  .addField('Discrim:',"#" +  message.author.discriminator, true)
+  .addField("ID:", message.author.id, true)
+  .addField("Create At:", message.author.createdAt, true)
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
