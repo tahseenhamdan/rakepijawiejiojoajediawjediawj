@@ -45,12 +45,14 @@ message.channel.sendEmbed(embed)
 client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
-**الاوامر العامه**
+الاوامر العامه
 { +help } لمعرفه اوامر البوت
 { members } لمعرفه عدد اعضاء السيرفر
+{ +ping } لمعرفه بينجك
+{ +avt } لعرض الافاتارات
 { +id } لمعرفه معلومات حسابك
 { +ct } لعبه كت تويت
-**الاوامر الاداريه**
+الاوامر الاداريه
 { +bc } لعمل برودكاست ل جميع اعضاء السيرفر
 { +mc } لاغلاق الشات
 { +umc } لفتح الشات
@@ -172,11 +174,27 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
-            if (message.content.startsWith(prefix + "+ping")) {
+            if (message.content.startsWith(prefix + "ping")) {
         message.channel.sendMessage(':ping_pong: Pong! In `' + `${client.ping}` + ' ms`');
     }
 });
 
+client.on('message', message => {
+    if (message.content.startsWith("+avt")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var x5bzm = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${x5bzm.avatarURL}`)
+      message.channel.sendEmbed(embed);
+    }
+});
 
 
 client.login("NDYzNjQzOTcyMTQ1OTA1Njk1.Dh6f2g.BxeAvuQ41QCUFb-N93QpkCuksJk");
