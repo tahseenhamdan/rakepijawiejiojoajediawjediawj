@@ -45,6 +45,7 @@ message.channel.sendEmbed(embed)
 client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
+{ members } لمعرفه عدد اعضاء السيرفر
 { +help } لمعرفه اوامر البوت
 { +id } لمعرفه معلومات حسابك
 { +bc } لعمل برودكاست ل جميع اعضاء السيرفر
@@ -68,6 +69,26 @@ client.on('message', message => {
     }
 });
 
+var prefix = '+';
+      client.on('message',function(message) {
+  if (message.author.bot) return;
+
+
+                  if(!message.channel.guild) return;
+
+                    if (message.content === prefix + "members") {
+ const embed = new Discord.RichEmbed()
+
+    .setDescription(`**Members info ✨
+💚 online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
+❤  dnd:       ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
+💛  idle:     ${message.guild.members.filter(m=>m.presence.status == 'idle').size}
+💠   membersCount:  ${message.guild.memberCount - message.guild.members.filter(m=>m.user.bot).size}
+💡 bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
+         message.channel.send({embed});
+
+    }
+      }); 
 
 
 client.login("NDYzNjQzOTcyMTQ1OTA1Njk1.Dh6f2g.BxeAvuQ41QCUFb-N93QpkCuksJk");
