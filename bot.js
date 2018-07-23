@@ -43,22 +43,74 @@ message.channel.sendEmbed(embed)
 });
  
 client.on('message', message => {
-     if (message.content === "+help") {
-message.author.send(`  **
-الاوامر العامه
-{ +help } لمعرفه اوامر البوت
-{ members } لمعرفه عدد اعضاء السيرفر
-{ +ping } لمعرفه بينجك
-{ +avt } لعرض الافاتارات
-{ +id } لمعرفه معلومات حسابك
-الاوامر الاداريه
-{ +bc } لعمل برودكاست ل جميع اعضاء السيرفر
-{ +mc } لاغلاق الشات
-{ +umc } لفتح الشات
-اوامر الالعاب
-{ +ct } لعبه كت تويت
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-en") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
 
-**`);
+
+ message.author.sendMessage(`
+ **
+__~~The King Bot~~__ By: tahseen
+╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
+╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
+╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
+╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
+╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
+╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+╔[❖════════════❖]╗
+             Prefix = ' + '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+             Admin Commands
+╚[❖════════════❖]╝
+
+ ❖ +clear ➾ clear chat ( not ready yet fixing)
+  
+ ❖ +bc <message> ➾ message all members in server
+
+
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝
+
+❖ 
+
+
+
+❖ +members ➾ members info
+
+❖ +id ➾ your id
+
+❖ +avt ➾ your avatar account
+
+❖ +help ➾ help by arabic
+
+❖ +ping ➾ to see ping
+
+
+╔[❖════════════❖]╗
+
+
+==================================================================
+
+Server support: https://discord.gg/DZu6aTz
+
+==================================================================
+
+developer bot : ταнsєєи#4825
+
+==================================================================
+**
+`);
+
+    }
+});
                 
     }
 });
