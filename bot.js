@@ -49,39 +49,25 @@ client.on('message', message => {
             
 	
 		 
-
-
- message.author.sendMessage(`
- **
-__~~The King Bot~~__ By: tahseen
-╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
-╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
-╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
-╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
-╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
-╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
-╔[❖════════════❖]╗
-             Prefix = ' + '
-╚[❖════════════❖]╝
-
-╔[❖════════════❖]╗
+client.on('message', message => {
+     if (message.content === "+help") {
+message.author.send(`  **
+[❖════════════❖]╗
              Admin Commands
 ╚[❖════════════❖]╝
+ 
+ ❖ +mc ➾ mute channel
 
- ❖ +clear ➾ clear chat ( not ready yet fixing)
-  
- ❖ +bc <message> ➾ message all members in server
+ ❖ +unm ➾ unmute channel
+ 
+ ❖ +clear ➾ clear chat 
+ 
+ ❖ +bc ➾ <message> ➾ message all members in server
 
 
 ╔[❖════════════❖]╗
             General  Commands
 ╚[❖════════════❖]╝
-
-❖ 
-
-
 
 ❖ +members ➾ members info
 
@@ -93,9 +79,7 @@ __~~The King Bot~~__ By: tahseen
 
 ❖ +ping ➾ to see ping
 
-
 ╔[❖════════════❖]╗
-
 
 ==================================================================
 
@@ -103,14 +87,16 @@ Server support: https://discord.gg/DZu6aTz
 
 ==================================================================
 
-developer bot : ταнsєєи#4825
+by : ταнsєєи#4825
 
 ==================================================================
-**
-`);
 
+**`);
     }
 });
+
+
+
                 
     }
 });
