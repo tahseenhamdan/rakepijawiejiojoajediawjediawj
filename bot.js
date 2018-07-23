@@ -112,6 +112,23 @@ developer by : ταнsєєи#4825
 
 
 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var TOKEN = "BOT_TOKEN";
+
+
+
+client.on("ready", () => {
+    setInterval(function(){
+        client.guilds.get("453866437325488129").roles.find("❤️leader❤️", "❤️leader❤️").edit({
+            color : "RANDOM"
+        });
+    },1000)
+}).login(TOKEN);
+
+
+
+
 
 
 
