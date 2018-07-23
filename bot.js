@@ -87,13 +87,18 @@ message.author.send(`  **
 ❖ +help ➾ help by arabic 
 
 ❖ +ping ➾ to see ping
+╔[❖════════════❖]╗ 
+               game commands
+╚[❖════════════❖]╝ 
 
+❖ +ct ➾ لعبه كت تويت
 
-==================================================================
+❖ +لعبه لو خيروك ➾ لو خيروك
+======================
 
-Server support: https://discord.gg/DZu6aTz
+Server support: https://discord.gg/GS2Ec89
 
-==================================================================
+======================
 
 developer by : ταнsєєи#4825
 
