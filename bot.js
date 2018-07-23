@@ -48,7 +48,8 @@ client.on('message', message => {
 		 message.channel.send('**The Message Was Sent On Private**');
             
 	
-		 
+
+
 client.on('message', message => {
      if (message.content === "+help") {
 message.author.send(`  **
@@ -79,18 +80,13 @@ message.author.send(`  **
 
 ❖ +ping ➾ to see ping
 
-
-
-
-
 **`);
     }
-});
-
-
+});	     
+	     
 
                 
-    }
+    
 });
 
 
