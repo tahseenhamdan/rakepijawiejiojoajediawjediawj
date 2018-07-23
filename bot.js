@@ -142,7 +142,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`اهلا بك في السيرفر`)
     .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('GREEN')
-    .setFooter('The King Bot', 'https://cdn.discordapp.com/icons/390551815072251904/418fa2788d8115808951c9881ba8f190.jpg')
+    .setFooter('Mine_3RB', 'https://cdn.discordapp.com/avatars/463643972145905695/209ce89d29fbeb94836d9484bda87786.png?size=2048')
 
 var channel =member.guild.channels.find('name', 'التــــــــرحيــــــب')
 if (!channel) return;
