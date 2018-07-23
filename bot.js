@@ -56,17 +56,40 @@ message.author.send(`  **
               Admin Commands
 ╚[❖════════════❖]╝
 ❖ +mc ➾ mute channel 
+
 ❖ +unm ➾ unmute channel
+
 ❖+clear ➾ clear chat
+
 ❖ +bc ➾ <message> ➾ message all members in server
+
 ╔[❖════════════❖]╗ 
-              General Commands
+               General Commands
 ╚[❖════════════❖]╝ 
+
 ❖ +members ➾ members info 
+
 ❖ +id ➾ your id 
+
 ❖ +avt ➾ your avatar account
+
 ❖ +help ➾ help by arabic 
-❖ +ping ➾ to see pingه
+
+❖ +ping ➾ to see ping
+
+
+==================================================================
+
+Server support: https://discord.gg/DZu6aTz
+
+==================================================================
+
+developer by : ταнsєєи#4825
+
+==================================================================
+
+
+
 **`);
     }
 });
