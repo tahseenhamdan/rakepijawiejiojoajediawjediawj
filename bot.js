@@ -90,6 +90,8 @@ message.author.send(`  **
 
 ❖ +ping ➾ to see ping
 
+❖ +mcskin ➾ لعرض سكنك في ماينكرافت
+
 ╔[❖════════════❖]╗ 
                game commands
 ╚[❖════════════❖]╝ 
