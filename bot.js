@@ -49,41 +49,7 @@ client.on('message', message => {
             
 	
 
-
-client.on('message', message => {
-     if (message.content === "+help") {
-message.author.send(`  **
-[❖════════════❖]╗
-             Admin Commands
-╚[❖════════════❖]╝
- 
- ❖ +mc ➾ mute channel
-
- ❖ +unm ➾ unmute channel
- 
- ❖ +clear ➾ clear chat 
- 
- ❖ +bc ➾ <message> ➾ message all members in server
-
-
-╔[❖════════════❖]╗
-            General  Commands
-╚[❖════════════❖]╝
-
-❖ +members ➾ members info
-
-❖ +id ➾ your id
-
-❖ +avt ➾ your avatar account
-
-❖ +help ➾ help by arabic
-
-❖ +ping ➾ to see ping
-
-**`);
-    }
-});	     
-	     
+     
 
                 
     
