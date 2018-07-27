@@ -99,6 +99,8 @@ message.author.send(`  **
 
 ❖ +lo 5erok ➾ لعبه لو خيروك
 
+❖ +لعبه زواج ➾ زواج
+
 ❖ +ct ➾ لعبه كت تويت
 
 ======================
@@ -238,47 +240,38 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
 
+client.on('message', message => {
+      if(message.content.startsWith ("+زواج")) {
+      if(!message.channel.guild) return message.reply('** This command only for servers **')
+      var proposed = message.mentions.members.first()
+     
+      if(!message.mentions.members.first()) return message.reply('لازم تطلب ايد وحدة').catch(console.error);
+      if(message.mentions.users.size > 1) return message.reply('ولد ما يصحلك الا حرمة وحدة كل مرة').catch(console.error);
+       if(proposed === message.author) return message.reply(`**خنثى ؟ **`);
+        if(proposed === client.user) return message.reply(`** تبي تتزوجني؟ **`);
+              message.channel.send(`**${proposed} 
+ بدك تقبلي عرض الزواج من ${message.author}
+ العرض لمدة 15 ثانية 
+ اكتب موافقة او لا** `)
 
-
-let rebel;
-client.on("ready", async  => {
-    let guild = client.guilds.get("453866437325488129");
-  let users = guild.members.map(member => member.user.id);
-  let i;
-  rebel=0;
-for (i=0 ; i < users.length ; i++) {
- let   check = guild.members.get(users[i]);
-if(!check.voiceChannelID){
-        continue;
-}else{
-  rebel++;
-}
-}
-guild.channels.find('id', '472255062236856361').setName(" Voice「"+rebel+"」");
-  client.setInterval(() =>{
-    let d = Date.now()
-  }, 5000);
-});
-client.on('voiceStateUpdate', (oldMember, newMember) => {
-    let guild = client.guilds.get("ID SERVER");
-let newUserChannel = newMember.voiceChannel
-let oldUserChannel = oldMember.voiceChannel
- if(oldUserChannel === undefined && newUserChannel !== undefined) {
-   rebel++;
-guild.channels.find('id', '472255062236856361').setName(" Voice「"+rebel+"」");
-} else if(newUserChannel === undefined){
-  rebel--;
-guild.channels.find('id', '472255062236856361').setName(" Voice「"+rebel+"」");
-}
-});
-client.on('message', Codes => {
+const filter = m => m.content.startsWith("موافقة");
+message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+    message.channel.send(`**${message.author} و ${proposed} الف الف مبروك الله يرزقكم الذرية الصالحة**`);
+})
+   .catch(collected => message.channel.send(`**السكوت علامة الرضا نقول مبروك ؟**`))
+   
+   const filte = m => m.content.startsWith("لا");
+message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+   message.channel.send(`**${message.author} تم رفض عرضك**`);
+})
+        
   
-  if(Codes.content === "+صوت") {
-      Codes.channel.send(" Voice「"+rebel+"」");
-}
+             
+    
+  }
 });
-
-
 
 
 
