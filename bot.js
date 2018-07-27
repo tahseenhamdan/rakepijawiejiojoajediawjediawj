@@ -206,7 +206,7 @@ channel.send({embed : embed});
 
 
 
-client.on('message', message => {
+’client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -216,6 +216,7 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
   if (command == "say") {
+  if(!message.member.hasPermission("MANAGE_ROLES")) return;
    message.channel.sendMessage(args.join("  "))
    message.delete()
   }
