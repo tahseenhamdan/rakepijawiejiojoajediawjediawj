@@ -290,6 +290,48 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 
 
 
+client.on('message', async message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('كس' ,'fuck' ,'شرموط' ,'nigga' ,'زب')){
+        message.delete()
+const mute = message.guild.roles.find('name' , 'Word Muted');
+if(!mute) {
+mute = await message.guild.createRole({name: "Word Muted", permissions: []})
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(mute, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false,
+       READ_MESSAGES_HISTORY:false
+})
+})
+client.users.get(message.author.id).addRole(mute.id);
+    return message.reply(`** عيب عليك لا تسب ! **`)
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
