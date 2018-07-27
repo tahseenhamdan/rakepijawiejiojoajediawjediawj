@@ -333,11 +333,6 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 
 
 
-client.on('message', async message => { var args = message.content.split(/[ ]+/) var time = 15; var user = message.author; if(message.content.includes('كس' ,'fuvk' ,'زب' ,'nigga')){ message.delete() const mute = message.guild.roles.find('name' , 'Word Muted'); if(!mute) { mute = await message.guild.createRole({name: "Word Muted", permissions: []}) message.guild.channels.forEach(async (channel, id) => { await channel.overwritePermissions(mute, { SEND_MESSAGES: false, ADD_REACTIONS: false, READ_MESSAGES_HISTORY:false }) }) await(user.addRole(mute.id)); setTimeout(function(){ user.removeRole(mute.id);
-},time*60000); return message.reply(** عيب عليك لا تسب ! **) } });
-
-
-
 
 
 
