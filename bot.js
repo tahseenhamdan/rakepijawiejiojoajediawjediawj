@@ -228,6 +228,39 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
 
+const discord = require('discord.js');
+const client = new discord.Client
+client.login(`BOT_TOKEN`)
+client.on("message", async function(message)  {
+let args = message.content.split(" ").slice(1).join(" ")
+if(message.content.startsWith("!voice")){
+return message.channel.send(`**${message.guild.members.filter(member => member.voiceChannel).size}**`);
+}
+
+client.on('voiceStateUpdate', (member) => {
+member.guild.channels.get("472255062236856361").setName(`In Voice Channel: [${member.guild.members.filter(member => member.voiceChannel).size}]`)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
