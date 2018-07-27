@@ -207,6 +207,32 @@ channel.send({embed : embed});
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+    if (message.content.startsWith(config.prefix + 'say')) {
+        if (message.author.id !== message.guild.owner.id) return message.reply('** هذا الأمر قفط لصاحب السيرفر و شكراًً **')
+    let args = message.content.split(" ").slice(1);
+        let say = new Discord.RichEmbed()
+            .setAuthor(message.author.username, message.author.avatarURL)
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setDescription(`${args}`)
+            .setColor('RANDOM')
+        message.channel.sendEmbed(say);
+        message.delete();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
