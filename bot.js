@@ -60,60 +60,58 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on('message', message => {
-     if (message.content === "+help") {
-message.author.send(`  **
-[❖════════════❖]╗
-              Admin Commands
-╚[❖════════════❖]╝
 
-❖ +mc ➾ تقفيل الشات
+client.on("message", message => {
+ if (message.content === prefix + "help") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+**${client.user.username} Commands **
+● ▬▬▬▬▬▬▬**Admins Commands**▬▬▬▬▬▬▬ ●
 
-❖ +unm ➾ فتح الشات
+**-    [ ${prefix}help ] ** Bot commands
 
-❖ +bc ➾ <message> ➾رساله ل جميع من ب السيرفر
+**-    [ ${prefix}clear ] ** clear the chat
 
-❖ +ban ➾ لعمل باند ل شخص 
+**-    [ ${prefix}bc ] ** broadcast
 
-❖+move all ➾ سحب الكل للروم حقك
+**-    [ ${prefix}mc ] ** mute the chat
 
-╔[❖════════════❖]╗ 
-               General Commands
-╚[❖════════════❖]╝ 
+**-    [ ${prefix}umc ] ** unmute the chat
 
-❖ +members ➾ members info 
+● ▬▬▬▬▬▬▬**General Commands**▬▬▬▬▬▬▬ ●
 
-❖ +server ➾ server info
+**-    [ ${prefix}say ] ** 
 
-❖ +avt ➾ your avatar account
+**-    [ ${prefix}avt ] ** 
 
-❖ +help ➾ help by arabic 
+**-    [ ${prefix}ping ] ** 
 
-❖ +ping ➾ to see ping
+**-    [ ${prefix}members ] ** 
 
-❖ +mcskin ➾ لعرض سكنك في ماينكرافت
+**-    [ ${prefix}server ] **
 
-╔[❖════════════❖]╗ 
-               game commands
-╚[❖════════════❖]╝ 
+● ▬▬▬▬▬▬▬**Games Commands**▬▬▬▬▬▬▬ ●
 
-❖ +lo 5erok ➾ لعبه لو خيروك
+**-    [ ${prefix}زواج ] **
 
-❖ +زواج ➾ لعبه زواج
+**-    [ ${prefix}lo 5erok ] **
 
-❖ +ct ➾ لعبه كت تويت
+**-    [ ${prefix}ct ] **
 
-❖ +craft ➾ لعبه ماينكرافت
-======================
+● ▬▬▬▬▬▬💎 **Mine_3RB** 💎▬▬▬▬▬▬ ●
 
-developer by : ταнsєєи#4825
-
-======================
+**Mine_3RB**
 
 
-**`);
-    }
-});
+`)
+
+
+message.author.sendEmbed(embed);
+
+}
+});;
 
 
 
@@ -212,6 +210,51 @@ client.on('message', function(msg) {
       msg.channel.send({embed:embed});
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on("message", message => {
+  var prefix = "+";
+
+          var args = message.content.substring(prefix.length).split(" ");
+          if (message.content.startsWith(prefix + "clear")) {
+ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
+      var msg;
+      msg = parseInt();
+    
+    message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+    message.channel.sendMessage("", {embed: {
+      title: "Done | تــم",
+      color: 0x06DF00,
+      description: "Done !",
+      footer: {
+        text: "Name Bot."
+      }
+    }}).then(msg => {msg.delete(3000)});
+                        }
+
+   
+});
+
+
+
 
 
 
