@@ -129,7 +129,7 @@ message.author.sendEmbed(embed);
 
 client.on('message', message =>{
     let args = message.content.split(' ');
-    let prefix = '!!';
+    let prefix = '+';
     
     if(args[0] === `${prefix}warn`) {
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
