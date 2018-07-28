@@ -372,23 +372,21 @@ channel.send({embed : embed});
 
 
 
-
 client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (command == "say") {
-   message.channel.sendMessage(args.join("  "))
-   message.delete()
-  }
- });
-
-
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+  
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+  
+    let args = message.content.split(" ").slice(1);
+  
+    if (command == "say") {
+        if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.reply("لا يوجد لديك صلاحية");
+        message.channel.sendMessage(args.join("  "))
+        message.delete()
+       }
+});
 
 
 
@@ -710,7 +708,7 @@ client.on('message', message => {
     } else
 
 
-    if (message.content.startsWith(prefix + 'streem')) {
+    if (message.content.startsWith(prefix + 'stream')) {
     if (message.author.id !== '402866255838576652') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setGame(argresult, "http://twitch.tv/HP");
         message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
