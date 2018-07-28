@@ -359,7 +359,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`اهلا بك في السيرفر`)
     .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('GREEN')
-    .setFooter('Mine_3RB', 'https://cdn.discordapp.com/avatars/463643972145905695/209ce89d29fbeb94836d9484bda87786.png?size=2048')
+    .setFooter('Mine_3RB', 'https://cdn.discordapp.com/attachments/453875729835491330/472729954052866049/mine3rb.jpg')
 
 var channel =member.guild.channels.find('name', '『welcome』')
 if (!channel) return;
