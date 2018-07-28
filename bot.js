@@ -83,7 +83,7 @@ message.author.send(`  **
 
 ❖ +members ➾ members info 
 
-❖ +id ➾ your id 
+❖ +server ➾ server info
 
 ❖ +avt ➾ your avatar account
 
@@ -102,10 +102,6 @@ message.author.send(`  **
 ❖ +زواج ➾ لعبه زواج
 
 ❖ +ct ➾ لعبه كت تويت
-
-======================
-
-Server support: https://discord.gg/GS2Ec89
 
 ======================
 
