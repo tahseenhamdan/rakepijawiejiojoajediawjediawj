@@ -361,7 +361,7 @@ client.on('guildMemberAdd', member => {
     .setColor('GREEN')
     .setFooter('Mine_3RB', 'https://cdn.discordapp.com/avatars/463643972145905695/209ce89d29fbeb94836d9484bda87786.png?size=2048')
 
-var channel =member.guild.channels.find('name', ':heart_eyes:『welcome』')
+var channel =member.guild.channels.find('name', '『welcome』')
 if (!channel) return;
 channel.send({embed : embed});
 });
