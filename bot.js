@@ -45,6 +45,7 @@ message.channel.sendEmbed(embed)
 
 	
 
+
      
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
